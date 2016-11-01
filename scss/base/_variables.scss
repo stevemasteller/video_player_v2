@@ -1,0 +1,72 @@
+
+// Descriptive color variables
+
+$white						: #fff;
+$black						: #000;
+
+// greys
+$mine-shaft					: #333;
+$tundora					: #4a4a4a;
+$dusty-grey					: #9c9c9c;
+$silver-chalice				: #ababab;
+$silver						: #ccc;
+
+$darkblue					: #0000C8;
+$lightblue					: #add8e6;
+$california					: #ff9904;
+$azure-radiance				: #0399ff;
+
+
+
+// Functional color variables
+
+$color-primary				: $silver-chalice;
+
+$color-text-base			: $mine-shaft;
+
+$color-link-base			: $tundora;
+$color-link-hover			: $dusty-grey;
+
+$color-skills-primary		: $california;
+$color-skills-secondary		: $azure-radiance;
+$color-skills-text			: $white;
+
+$color-footer-link-base		: $darkblue;
+$color-footer-link-hover	: $lightblue;
+
+$color-hr					: $black;
+$color-img-shadow			: $silver;
+
+
+
+// Font stacks
+$stack-sans-serif			: sans-serif;
+
+
+
+// Font size
+$font-size-normal			: 1em;
+$font-size-small			: 0.8em;
+
+
+
+// Font weight
+$font-weight-normal			: 500;
+$font-weight-heavy			: 700;
+$font-weight-heaviest		: 800;
+
+
+
+// Line height
+$line-height-normal			: 1.5;
+$line-height-large			: 2.2;
+
+
+// Seperation between sections
+$section-seperation			: 4em;
+
+
+// Media query breakpoints
+
+$break-narrow				: 768px;
+$break-wide					: 1024px;

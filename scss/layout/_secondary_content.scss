@@ -1,0 +1,33 @@
+/*********************************************
+Secondary Content Styles
+*********************************************/
+.secondary-content {
+	margin-top: $section-seperation;
+}
+
+
+ul.skills {
+	@extend %no-padding;
+	text-align: center;
+}
+
+.skills li {
+	border-radius: 6px;
+	display: inline-block;
+	background: $color-skills-primary;
+	color: $color-skills-text;
+	padding: 5px 10px;
+	margin: 2px;
+	
+	&:nth-child(odd) {
+		background: $color-skills-secondary;
+	}
+}
+
+@include mq(narrow) {
+
+	.secondary-content {
+		margin-top: $section-seperation;
+	}
+}
+

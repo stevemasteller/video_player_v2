@@ -1,0 +1,26 @@
+// Text
+
+@mixin text($size: null, $l-height: null, $weight: null, $color: null) {
+	font-size: $size;
+	line-height: $l-height;
+	font-weight: $weight;
+	color: $color;
+}
+
+@mixin mq($break) {
+	@if $break == "narrow" {
+	
+		@media (min-width: $break-narrow) {
+			@content;
+		}
+	} 
+	@else if $break == "wide" {
+		
+		@media (min-width: $break-wide) {
+			@content;
+		}
+	}
+	@else {
+		@error "No value could be retrieved for #{$break}"
+	}
+}

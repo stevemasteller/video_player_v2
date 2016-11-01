@@ -1,0 +1,58 @@
+/*********************************************
+Global Layout Set-up
+*********************************************/
+
+* { 
+	box-sizing: border-box;
+}
+  
+body {
+	@include text(
+		$font-size-normal,
+		$line-height-normal,
+		$font-weight-normal,
+		$color-text-base
+	);
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-family: $stack-sans-serif; 
+	background: $color-primary;
+}
+
+h2 {
+	font-weight: normal;
+}
+
+h4 {
+	font-weight: $font-weight-heaviest;
+	padding-bottom: 1em;
+}
+
+p {
+	line-height: $line-height-normal;
+	margin: 0 1em;
+}
+
+/* Link Styles */
+a {
+	text-decoration: none;
+	color: $color-link-base;
+	
+	&:hover {
+		color: $color-link-hover;
+	}
+}
+
+hr {
+	border-color: $color-hr;
+}
+
+@include mq(narrow) {
+
+	.flex {
+		display: flex; 
+		margin: 0 5%;
+	}
+}
+
