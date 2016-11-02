@@ -5,10 +5,18 @@ Video Content Styles
 .video-wrapper {
 	margin: 0 auto;
 	display: block;
-	max-width: 800px;
+	max-width: $max-content-width;
 }
 
 video {
 	height: auto;
 	width: 100%;
+}
+
+.video-controls {
+	display: none;
+}
+
+.hover-wrapper:hover  .video-controls {
+	display: inline-block;
 }

@@ -3,10 +3,14 @@ Transcript Content Styles
 *********************************************/
 
 .transcript-wrapper {
-	margin: 0 auto;
-	max-width: 800px;
+	margin: $section-seperation auto 0 auto;
+	max-width: $max-content-width;
 	max-height: 50vh;
 	overflow: auto;
+}
+
+.highlight {
+	color: $color-text-highlight;
 }
 
 /*
