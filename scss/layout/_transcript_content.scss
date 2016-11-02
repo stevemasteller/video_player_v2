@@ -1,11 +1,15 @@
 /*********************************************
-Secondary Content Styles
+Transcript Content Styles
 *********************************************/
-.secondary-content {
-	margin-top: $section-seperation;
+
+.transcript-wrapper {
+	margin: 0 auto;
+	max-width: 800px;
+	max-height: 50vh;
+	overflow: auto;
 }
 
-
+/*
 ul.skills {
 	@extend %no-padding;
 	text-align: center;
@@ -29,5 +33,5 @@ ul.skills {
 	.secondary-content {
 		margin-top: $section-seperation;
 	}
-}
+}*/
 
