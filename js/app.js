@@ -266,7 +266,7 @@ video.addEventListener("timeupdate", function() {
 			$captions.each( function () {
 				
 				// if the index matches the caption value highlight it
-				if ($(this).attr('cptn') == i) {
+				if ($(this).attr('title') == i) {
 					$(this).addClass('highlight');
 					
 				// remove any existing highlights
@@ -285,7 +285,7 @@ $captions.each ( function () {
 	$(this).click( function() {
 		
 		var $currentCaption = $(this);
-		var index = this.getAttribute('cptn');
+		var index = this.getAttribute('title');
 		
 		// cycle thtough each caption
 		$captions.each( function () {
