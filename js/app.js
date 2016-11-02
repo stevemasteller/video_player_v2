@@ -68,7 +68,7 @@ var captionData = [
 		start: 57.780,
 		stop: 100.150
 	}
-]
+];
 
 
 
@@ -88,7 +88,6 @@ var $fullScreenButton = $("#full-screen");
 // Sliders
 var $seekBar = $("#seek-bar");
 var $volumeBar = $("#volume-bar");
-var $bufferBar = $("#buffer-bar");
 
 // Info
 var $currentTime = $("#current-time");
@@ -116,7 +115,7 @@ $slowButton.click( function () {
 
 // Event listener for the play/pause button
 $playButton.click( function () {
-	if (video.paused == true) {
+	if (video.paused === true) {
 		
 		// Play the video
 		video.play();
@@ -151,7 +150,7 @@ $fastButton.click( function () {
 
 // Event listener for the mute button
 $muteButton.click( function () {
-	if (video.muted == true) {
+	if (video.muted === true) {
 		
 		// Unmute the video
 		video.muted = false;
@@ -201,7 +200,7 @@ $fullScreenButton.click( function() {
 function formatTime(time) {
 	
 	// pad time with 0's and convert it to a string
-	var paddedTime = '00' + time + '00'
+	var paddedTime = '00' + time + '00';
 	
 	// determine the location of the decimal point
 	var decimalLocation = paddedTime.indexOf('.');
@@ -213,7 +212,7 @@ function formatTime(time) {
 
 // Event listener for the seek bar, updates video time
 $seekBar.on("input", function() {
-	console.log($seekBar.val)
+
 	// Calculate the new time
 	var time = video.duration * ($seekBar.val() / 100);
 
@@ -253,6 +252,19 @@ $seekBar.mouseup( function() {
 /* Transcript Control                     		*/
 /************************************************/
 
+// highlight span if it matches the index.
+function highlight ($span, i) {
+	
+	// if the index matches the caption value highlight it
+	if ($span.attr('title') == i) {
+		$span.addClass('highlight');
+		
+	// remove any existing highlights
+	} else {
+		$span.removeClass('highlight');
+	}
+}
+
 // update highlight
 video.addEventListener("timeupdate", function() {
 	
@@ -263,19 +275,11 @@ video.addEventListener("timeupdate", function() {
 		if (video.currentTime >= captionData[i].start && video.currentTime < captionData[i].stop) {
 
 			// cycle thtough each caption
-			$captions.each( function () {
-				
-				// if the index matches the caption value highlight it
-				if ($(this).attr('title') == i) {
-					$(this).addClass('highlight');
-					
-				// remove any existing highlights
-				} else {
-					$(this).removeClass('highlight');
-				}
-			});
+			$captions.each( function() {
+				highlight($(this), i);
+				});
 		}
-	};
+	}
 });
 
 // find each caption <span></span>
