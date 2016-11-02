@@ -88,6 +88,7 @@ var $fullScreenButton = $("#full-screen");
 // Sliders
 var $seekBar = $("#seek-bar");
 var $volumeBar = $("#volume-bar");
+var $bufferBar = $("#buffer-bar");
 
 // Info
 var $currentTime = $("#current-time");
@@ -274,7 +275,7 @@ video.addEventListener("timeupdate", function() {
 		// if currentTime within caption data check captions
 		if (video.currentTime >= captionData[i].start && video.currentTime < captionData[i].stop) {
 
-			// cycle thtough each caption
+			// cycle through each caption
 			$captions.each( function() {
 				highlight($(this), i);
 				});
