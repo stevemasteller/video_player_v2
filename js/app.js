@@ -84,11 +84,11 @@ var $playButton = $("#play-pause");
 var $fastButton = $("#play-faster");
 var $muteButton = $("#mute");
 var $fullScreenButton = $("#full-screen");
-var $ccButton = $("#closed-caption");
 
 // Sliders
 var $seekBar = $("#seek-bar");
 var $volumeBar = $("#volume-bar");
+var $bufferBar = $("#buffer-bar");
 
 // Info
 var $currentTime = $("#current-time");
@@ -122,14 +122,14 @@ $playButton.click( function () {
 		video.play();
 		
 		// Update the button text to 'Pause'
-		$playButton.html("Pause");
+		$playButton.html('<img src="icons/pause-icon.png" alt="Pause" />');
 	} else {
 		
 		// Pause the video
 		video.pause();
 		
 		// Update the button text to 'Play'
-		$playButton.html("Play");
+		$playButton.html('<img src="icons/play-icon.png" alt="Play" />');
 	}
 });
 
@@ -157,14 +157,14 @@ $muteButton.click( function () {
 		video.muted = false;
 		
 		// Update the button text to 'Pause'
-		$muteButton.html("Mute");
+		$muteButton.html('<img src="icons/volume-on-icon.png" alt="Mute" />');
 	} else {
 		
 		// Mute the video
 		video.muted = true;
 		
 		// Update the button text to 'Play'
-		$muteButton.html("Unmute");
+		$muteButton.html('<img src="icons/volume-off-icon.png" alt="UnMute" />');
 	}
 });
 
@@ -175,27 +175,6 @@ $volumeBar.on('input', function() {
 	
 	// update the video volume
 	video.volume = $volumeBar.val();
-});
-
-
-
-// Event listener for the closed caption button
-$ccButton.click( function () {
-	if (video.textTracks[0].mode == "showing") {
-		
-		// Hide the captions
-		video.textTracks[0].mode = "hidden";
-		
-		// Update the cc button to 'Off'
-		$ccButton.html("CC off");
-	} else {
-		
-		// Mute the video
-		video.textTracks[0].mode = "showing"
-		
-		// Update the cc button to 'On'
-		$ccButton.html("cc On");
-	}
 });
 
 
@@ -267,9 +246,9 @@ $seekBar.mousedown( function() {
 $seekBar.mouseup( function() {
 	video.play();
 });
+    
 
-
-
+  
 /************************************************/
 /* Transcript Control                     		*/
 /************************************************/
@@ -306,6 +285,7 @@ $captions.each ( function () {
 	$(this).click( function() {
 		
 		var $currentCaption = $(this);
+		var index = this.getAttribute('cptn');
 		
 		// cycle thtough each caption
 		$captions.each( function () {
@@ -317,10 +297,13 @@ $captions.each ( function () {
 		// highlight the current class
 		$currentCaption.addClass('highlight');
 		
-		// Set the currentTime of the video
-		var index = $currentCaption.val('cptn')
+		// Update the current video time
 		video.currentTime = captionData[index].start;
 	});
 });
 
 
+/************************************************/
+/* On load			                     		*/
+/************************************************/
+video.preload = "auto";

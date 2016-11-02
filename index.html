@@ -12,24 +12,31 @@
 
 	<div class="hover-wrapper">
 		<div class="video-wrapper">
-		
 			<video id="video">
 				<source src="video/video.mp4" type="video/mp4">
 				<source src="video/video.ogg" type="video/ogg">
-				<track label="Transcript" kind="subtitles" srclang="en" src="video/captions.vtt" default />
 			</video>
 		</div>
 		
-		<input type="range" id="seek-bar" value="0">
-		<div class="video-controls">
-			<button id="play-slower">Slower</button>
-			<button id="play-pause">Play</button>
-			<button id="play-faster">Faster</button>
-			<span id="current-time">00:00</span>
-			<button id="mute">Mute</button>
-			<input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1">
-			<button id="closed-caption">CC</button>
-			<button id="full-screen">Full Screen</button>
+		<div class="controls-wrapper">
+			<input type="range" id="seek-bar" value="0">
+			
+			<div class="video-controls">
+				
+				<div class="flex">
+					<div class="flex">
+						<button id="play-slower"><img src="icons/minus.svg" alt="slow playback speed" /></button>
+						<button id="play-pause"><img src="icons/play-icon.png" alt="Play" /></button>
+						<button id="play-faster"><img src="icons/plus.svg" alt="Increase playback speed" /></button>
+						<span id="current-time">00:00</span>
+					</div>
+					<div>
+						<button id="mute"><img src="icons/volume-on-icon.png" alt="UnMute" /></button>
+						<input type="range" id="volume-bar" min="0" max="1" step="0.2" value="1">
+						<button id="full-screen"><img src="icons/fullscreen-icon.png" alt="Fullscreen" /></button>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 	

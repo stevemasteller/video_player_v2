@@ -2,10 +2,19 @@
 Video Content Styles
 *********************************************/
 
-.video-wrapper {
+.hover-wrapper {
+	position: relative;
+	max-width: $max-content-width;
+	margin: 0 auto;
+
+	&:hover  .video-controls {
+		display: inline-block;
+	}
+}
+
+video-wrapper {
 	margin: 0 auto;
 	display: block;
-	max-width: $max-content-width;
 }
 
 video {
@@ -13,10 +22,43 @@ video {
 	width: 100%;
 }
 
-.video-controls {
-	display: none;
+.controls-wrapper {
+	position: absolute;
+	z-index: 1;
+	margin: -80px auto 0 auto;
+	display: block;
+	width: 100%;
 }
 
-.hover-wrapper:hover  .video-controls {
-	display: inline-block;
+.video-controls {
+	display: none;
+	width: 100%;
 }
+
+#seek-bar {
+	display: block;
+	width: 95%;
+	margin: 0 auto 1.5em auto;
+}
+
+.flex {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#current-time {
+	color: $white;
+	line-height: 0.8;
+}
+
+#play-pause,
+#full-screen,
+#mute,
+#play-faster,
+#play-slower {
+	background: transparent;
+	border: none;
+	outline: none;
+}
+
